@@ -24,5 +24,9 @@
       color: var(--color-white);
       background: transparent;
     }
+
+    @include f.tablet{
+      font-size: f.rem(16);
+    }
   }
 }

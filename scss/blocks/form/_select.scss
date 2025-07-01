@@ -41,7 +41,6 @@
     overflow-y: hidden;
     padding-left: 10px;
     padding-right: 40px;
-    // padding-inline: 10px;
     font-size: f.rem(18);
     color: var(--color-title);
     cursor: pointer;
@@ -65,6 +64,10 @@
 
     @include f.hover {
       --color-title: var(--color-accent);
+    }
+
+    @include f.tablet{
+      font-size: f.rem(16);
     }
   }
   // .select__content
@@ -117,17 +120,14 @@
   }
   // .select__option-label
   &__option-label {
-    display: flex;
-    align-items: center;
+    display: inline-block;
     width: 100%;
     padding-inline: 10px;
+    padding-block: 6px;
 
     transition-duration: var(--transition-duration);
     cursor: pointer;
-    overflow: hidden;
     font-size: f.rem(18);
-    line-height: 1.9;
-    min-height: 35px;
 
     @include f.hover {
       color: var(--color-blue-logo);

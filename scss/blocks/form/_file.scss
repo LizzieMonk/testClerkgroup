@@ -27,6 +27,10 @@
         font-size: f.rem(15);
         text-transform: uppercase;
         color: var(--color-text);
+
+        @include f.tablet{
+          font-size: f.rem(13);
+        }
     }
 
     svg{

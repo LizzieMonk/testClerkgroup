@@ -18,12 +18,20 @@
   // .range__label-text
   &__label-text {
     font-size: f.rem(18);
+
+    @include f.tablet{
+      font-size: f.rem(16);
+    }
   }
   // .range__value
   &__value {
     font-weight: 600;
     font-size: f.rem(18);
     color: var(--color-bg-input);
+
+    @include f.tablet{
+      font-size: f.rem(16);
+    }
   }
   // .range__input
   &__input {

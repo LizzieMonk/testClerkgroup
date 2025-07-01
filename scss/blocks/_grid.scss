@@ -10,14 +10,6 @@
     gap: 30px;
     align-items: center;
 
-    // @include f.desktop{
-    //     gap: 15px;
-    // }
-
-    // @include f.mobile{
-    //     gap: 17px;
-    // }
-
     //от 2 до 12 колонок
     //циклом создаем селекторы модификаторов
     @for $i from 2 through 12{

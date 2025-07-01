@@ -4,12 +4,10 @@
     height: 100%;
     display: flex;
     align-items: center;
-    // background: red;
 
     // .main__container
     &__container {
         width: min(100%, 780px);
-        // background: green;
     }
     // .main__body
     &__body {
@@ -23,7 +21,6 @@
 
         @include f.mobile{
             row-gap: 40px;
-            // background: red;
         }
     }
     // .main__title

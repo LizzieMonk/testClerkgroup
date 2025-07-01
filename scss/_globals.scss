@@ -24,6 +24,10 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+
+    @include media.tablet{
+        background-size: cover;
+    }
 }
 
 a,

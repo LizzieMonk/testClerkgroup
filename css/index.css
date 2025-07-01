@@ -349,6 +349,11 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+@media (max-width: 1120px) {
+  body {
+    background-size: cover;
+  }
+}
 
 a,
 button,
@@ -631,7 +636,7 @@ h2 {
 }
 
 .bg {
-  background: url("../../img/main.png");
+  background: url("/img/main.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

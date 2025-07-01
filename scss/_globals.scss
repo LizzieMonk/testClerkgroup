@@ -1,0 +1,62 @@
+
+@use 'functions' as func;
+@use 'media' as media;
+@use 'variables';
+@use 'mixins' as mix;
+// @use 'utils' as util;
+
+
+// глобальные стили для элементов html, body, элементов по тегам ссылок, кнопок, полей ввода и тд
+html{
+    font-size: 16px;
+}
+
+body{
+    font-size: func.rem(16);
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    line-height: 1.28;
+    color: var(--color-white);
+    background: url('../img/bg.png');
+    background-color: var(--color-dark);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+mark{
+    background: transparent;
+}
+
+h1, h3{
+    font-weight: 700;
+}
+
+h1{
+    @include mix.fluid-text(48,24);
+    font-weight: 700;
+    // line-height: 1.36364;
+}
+
+h2{
+    @include mix.fluid-text(36,20);
+    font-weight: 900;
+    // line-height: 2.72727;
+    // font-weight: 400;
+}
+

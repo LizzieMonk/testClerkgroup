@@ -1,0 +1,43 @@
+@use "../../all" as f;
+
+.file {
+    --color-text: var(--color-dark);
+
+    min-width: 370px;
+  // .file__input
+  &__input {
+  }
+  // .file__custom-label
+  &__custom-label {
+    width: 100%;
+    @include f.flex-center(true);
+    height: var(--input-height);
+    max-height: var(--input-height);
+    overflow-y: hidden;
+    border: var(--border-input-file);
+    border-radius: var(--border-radius-input);
+    background: var(--color-white);
+    padding-inline: 10px;
+    column-gap: 10px;
+    transition-duration: var(--transition-duration);
+
+    // .file__custom-label-text
+    &-text{
+        font-weight: 600;
+        font-size: f.rem(15);
+        text-transform: uppercase;
+        color: var(--color-text);
+    }
+
+    svg{
+        min-width: 17px;
+        color: var(--color-text);
+    }
+
+    @include f.hover{
+        background: var(--color-dark);
+        --color-text: var(--color-white);
+    }
+
+  }
+}

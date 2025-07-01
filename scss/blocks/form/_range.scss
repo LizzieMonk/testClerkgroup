@@ -1,0 +1,81 @@
+@use "../../all" as f;
+
+.range {
+    min-width: 370px;
+    grid-column: span 2; //при желании отключить
+
+    @include f.tablet{
+        grid-column: auto;
+    }
+
+  // .range__label
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    align-items: flex-end;
+  }
+  // .range__label-text
+  &__label-text {
+    font-size: f.rem(18);
+  }
+  // .range__value
+  &__value {
+    font-weight: 600;
+    font-size: f.rem(18);
+    color: var(--color-bg-input);
+  }
+  // .range__input
+  &__input {
+    -webkit-appearance: none;
+    margin-block: 15px;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+
+    border-radius: 6px;
+    background: var(--color-bg-range);
+    border: 1px solid var(--color-white);
+    cursor: pointer;
+
+    @include f.hover {
+      background: var(--color-white);
+    }
+
+    //ручка
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border: 3px solid var(--color-accent-secondary);
+      border-radius: 50%;
+      background: var(--color-blue-logo);
+      cursor: pointer;
+      transition-duration: var(--transition-duration);
+      margin-top: 0px; //-8px
+    }
+
+    &::-moz-range-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border: 3px solid var(--color-accent-secondary);
+      border-radius: 50%;
+      background: var(--color-blue-logo);
+      cursor: pointer;
+      transition-duration: var(--transition-duration);
+      margin-top: 0px; //-8px
+    }
+
+    //активное состояние
+    &:active::-webkit-slider-thumb {
+      background: var(--color-accent-secondary);
+    }
+
+    &:active::-moz-range-thumb {
+      background: var(--color-accent-secondary);
+    }
+  }
+}

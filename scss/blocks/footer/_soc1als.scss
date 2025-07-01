@@ -1,0 +1,46 @@
+@use '../../all' as f;
+
+.soc1als {
+    // .soc1als__list
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 38px;
+
+        @include f.desktop{
+            column-gap: 35px;
+        }
+
+        @include f.mobile{
+            column-gap: 20px;
+        }
+    }
+    // .soc1als__item
+    &__item {
+    }
+    // .soc1als__link
+    &__link {
+        display: inline-flex;
+        min-width: fit-content;
+        flex-direction: row-reverse;
+        min-height: var(--min-height-click-elems);
+        align-items: center;
+        column-gap: 10px;
+
+        font-size: f.rem(13);
+
+        svg{
+            color: var(--color-accent);
+            @include f.square(20px);
+        }
+
+        @include f.hover{
+            color: var(--color-accent);
+        }
+
+        // .soc1als__link-text
+        &-text {
+        }
+    }
+}

@@ -1,0 +1,39 @@
+
+@use '../all' as f;
+
+.grid{
+    --gridColumns: 1;
+
+    display: grid;
+    grid-template-columns: repeat(var(--gridColumns), 1fr);
+
+    gap: 30px;
+    align-items: center;
+
+    // @include f.desktop{
+    //     gap: 15px;
+    // }
+
+    // @include f.mobile{
+    //     gap: 17px;
+    // }
+
+    //от 2 до 12 колонок
+    //циклом создаем селекторы модификаторов
+    @for $i from 2 through 12{
+        //создаем модификатор
+        &_#{$i}{
+            --gridColumns: #{$i};
+        }
+    }
+
+    &_3{
+        @include f.tablet{
+            --gridColumns: 2;
+        }
+
+        @include f.mobile{
+            --gridColumns: 1;
+        }
+    }
+}

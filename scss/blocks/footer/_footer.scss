@@ -1,0 +1,93 @@
+@use '../../all' as f;
+
+.footer {
+    background: var(--color-bg-footer);
+    padding-block: 30px;
+
+    @include f.tablet{
+        padding-block: 20px;
+    }
+
+    @include f.mobile{
+        padding-block: 10px;
+    }
+
+    // .footer__container
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & > * {
+            height: fit-content;
+            padding-inline: 42px;
+            flex-grow: 1;
+            position: relative;
+
+            &:last-child{
+                padding-right: 0;
+            }
+
+            &:first-child{
+                padding-left: 0;
+            }
+
+            &:not(:first-child){
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    width: 1px;
+                    height: 18px;
+                    background: var(--color-mark-footer);
+
+                    @include f.tablet{
+                        width: 54px;
+                        height: 1px;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%,0);
+                    }
+                }
+            }
+
+            @include f.desktop{
+                padding-inline: 35px;
+            }
+
+            @include f.tablet{
+                width: 100%;
+                padding-inline: 0;
+            }
+        }
+
+        @include f.tablet{
+            flex-wrap: wrap;
+            row-gap: 10px;
+        }
+    }
+    // .footer__extra
+    &__extra {
+        font-size: f.rem(13);
+        display: inline-flex;
+        justify-content: center;
+        padding-block: 10px;
+        text-align: center;
+
+        // .footer__extra_accent
+        &_accent{
+            color: inherit;
+            text-transform: uppercase;
+        }
+
+    }
+    // .footer__money
+    &__money {
+    }
+    // .footer__soc1als
+    &__soc1als {
+    }
+}
+

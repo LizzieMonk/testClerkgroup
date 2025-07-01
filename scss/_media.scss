@@ -1,0 +1,68 @@
+// миксины для более удобного использования медиа запросов
+$desktop-above: 1921px;
+$desktop: 1920px;
+
+$tablet-above: 1120px;
+$tablet: 1120px;
+
+$mobile-above: 321px;
+$mobile: 320px;
+
+@mixin desktop-above{
+    @media (min-width: $desktop-above) {
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media (max-width: $desktop) {
+        @content;
+    }
+}
+
+
+@mixin tablet-above{
+    @media (min-width: $tablet-above) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile-above{
+    @media (min-width: $mobile-above) {
+        @content;
+    }
+}
+
+@mixin mobile{
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+//убрать эффект залипания
+@mixin hover{
+    @media(hover: hover){ //для устройств, где есть наведение
+        &:hover, &:active{
+            @content;
+        }
+    }
+    @media(hover: none){ //для устройств с тач экраном
+        &:active{
+            @content;
+        }
+    }
+}
+
+@mixin hover-extra{
+    @media(hover: hover){ //для устройств, где есть наведение
+        &:hover{
+            @content;
+        }
+    }
+}

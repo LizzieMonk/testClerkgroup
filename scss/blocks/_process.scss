@@ -1,0 +1,15 @@
+@use "../all" as f;
+
+.process {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // .process__icons
+  &__icons {
+  }
+  // .process__form
+  &__form {
+  }
+}
+

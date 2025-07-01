@@ -1,0 +1,63 @@
+
+@use './media' as media;
+
+// глобальные переменные проекта
+:root{
+    // цвета
+    --color-dark: #272733;
+    --color-dark-alt: #2a2b30;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-blue: #43ABF0;
+    --color-blue-logo: #42A9ED;
+    --color-accent: #3E9CDC;
+    --color-accent-secondary: #286690;
+    --color-bg-header: rgba(16, 16, 29, 0.9);
+    --color-grey: #6F6D7B;
+    --color-grey-alt: #bbb;
+    --color-bg-footer: #3d4050;
+    --color-mark-footer: #c3c3c3;
+    --color-mark-process: #c4c4c4;
+    --color-bg-input: rgba(255, 255, 255, 0.85);
+    --color-bg-range: rgba(255, 255, 255, 0.7);
+
+    // границы
+    --border-primary: 1px solid var(--color-white);
+    --border-secondary: 1px solid var(--color-grey);
+    --border-input: 1px solid var(--color-white);
+    --border-input-file: 2px solid var(--color-accent);
+    --border-select: 1px solid var(--color-bg-footer);
+
+    //скругления
+    --border-radius-button: 4px;
+    --border-radius-input: 3px;
+
+    //тени
+    --shadow: 0 4px 10px 0 rgba(187, 225, 250, 0.25);
+
+    //шрифты
+    --font-family: 'Lato', sans-serif;
+    --font-family-accent: 'Raleway', sans-serif;
+
+    //сетка
+    --container-width: 1172px;
+    --container-padding-x: 10px;
+
+    //вертикальные отступы секции
+    --section-padding-y: 120px;
+
+    --min-height-click-elems: 48px;
+    --button-height: 43px;
+    --input-height: 48px;
+    --max-buuton-width: 183px;
+
+    //анимация
+    --transition-duration: 0.2s; //время перехода
+
+    --scale: scale(1.02);
+
+    @include media.mobile{
+        --section-padding-y: 100px;
+    }
+
+}

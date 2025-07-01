@@ -1,0 +1,42 @@
+@use '../../all' as f;
+
+.money {
+    // .money__list
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 38px;
+
+        @include f.desktop{
+            column-gap: 35px;
+        }
+
+        @include f.mobile{
+            column-gap: 20px;
+        }
+    }
+    // .money__item
+    &__item {
+    }
+    // .money__link
+    &__link {
+        display: inline-flex;
+        min-width: fit-content;
+        flex-direction: row-reverse;
+        min-height: var(--min-height-click-elems);
+        align-items: center;
+        column-gap: 10px;
+
+        font-size: f.rem(13);
+
+        svg{
+            color: var(--color-accent);
+            @include f.square(20px);
+        }
+
+        // .money__link-text
+        &-text {
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@use '../../all' as f;
+
+
+.button{
+    @include f.flex-center(true);
+
+    min-height: var(--button-height); //43
+    max-width: var(--max-buuton-width);
+    padding-inline: 60px;
+    border: var(--border-primary);
+    border-radius: var(--border-radius-button);
+
+    background-color: var(--color-accent);
+
+    font-size: f.rem(13);
+    text-transform: uppercase;
+    color: var(--color-white);
+
+    // .button_white
+    &_white {
+        border: var(--border-secondary);
+        background-color: var(--color-white);
+        color: var(--color-dark-alt);
+    }
+
+    @include f.hover{
+       border-color: transparent;
+       color: var(--color-white);
+       background: var(--color-accent-secondary);
+    }
+}

@@ -1,0 +1,37 @@
+@use "../all" as f;
+
+.section {
+  padding-block: var(--section-padding-y);
+
+  // .section_full-screen
+  &_full-screen {
+    height: 100vh;
+  }
+
+  // .section__body
+  &__body {
+    width: 100%;
+  }
+
+  // .section__header
+  &__header {
+    @include f.flex-center;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  // .section__title
+  &__title {
+    text-transform: uppercase;
+
+    // .section__title_accent
+    &_accent {
+      color: var(--color-accent);
+    }
+  }
+  // .section__subtitle
+  &__subtitle {
+    font-size: f.rem(18);
+    color: var(--color-grey-alt);
+    text-align: center;
+  }
+}

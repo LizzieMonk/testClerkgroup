@@ -1,0 +1,32 @@
+@use "../../all" as f;
+
+.icons {
+    width: 100%;
+    margin-block: 80px; //временно
+
+    @include f.tablet {
+      margin-block: 60px;
+    }
+
+    @include f.mobile {
+      margin-block: 40px;
+    }
+
+    // .icons__list
+    &__list {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+
+      @include f.mobile {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+    }
+    // .icons__item
+    &__item {
+    }
+}

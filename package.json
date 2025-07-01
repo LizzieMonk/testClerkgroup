@@ -1,0 +1,14 @@
+{
+  "name": "testovoe",
+  "version": "1.0.0",
+  "description": "testovoe",
+  "dependencies": {
+    "sass": "^1.89.2",
+    "svgo": "^4.0.0"
+  },
+  "scripts": {
+    "watch": "npx sass --watch scss:css",
+    "compile": "npx sass scss:css",
+    "compress_svg": "npx svgo -rf img/icons_orig -o img/icons --config svgo.config.mjs"
+  }
+}

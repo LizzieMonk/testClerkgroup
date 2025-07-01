@@ -1,0 +1,55 @@
+
+@use 'media' as media;
+@use 'variables';
+
+
+// утилитарные классы
+.container{
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2); //856 + 10*2
+    margin-inline: auto; //центрирование по горизонтали
+    padding-inline: var(--container-padding-x);
+}
+
+//доступность интерактивных элементов
+.visually-hidden{
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+// скроет элемент на мобилке при определенном медиа запросе
+.hidden-mobile{
+    @include media.mobile{
+        display: none !important;
+    }
+}
+
+.hidden-tablet{
+    @include media.tablet{
+        display: none !important;
+    }
+}
+
+// а этот покажет элемент
+.visible-mobile{
+    @include  media.mobile-above{
+        display: none !important;
+    }
+}
+
+.visible-tablet{
+    @include  media.tablet-above{
+        display: none !important;
+    }
+}
+
+.hidden{
+    display: none !important;
+}

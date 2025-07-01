@@ -1,0 +1,21 @@
+// централизованный модуль
+// @forward -- реэкспорт
+// переадресация импорта
+
+@forward 'fonts';
+@forward 'normalize';
+@forward 'functions';
+@forward 'media';
+@forward 'variables';
+@forward 'mixins';
+@forward 'utils';
+@forward 'globals';
+
+// @use 'fonts' as font;
+// @use 'normalize' as norm;
+// @use 'functions' as func;
+// @use 'media' as media;
+// // @use 'variables' as var;
+// @use 'mixins' as mix;
+// @use 'utils' as util;
+// @use 'globals' as g;

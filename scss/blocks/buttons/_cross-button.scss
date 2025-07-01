@@ -1,0 +1,41 @@
+
+@use '../../all' as f;
+
+.cross-button{
+    @include f.reset-button;
+
+    @include f.square(var(--min-height-click-elems));
+
+    vertical-align: top;
+    position: relative;
+
+    &::after, &::before{
+        content: '';
+        position: absolute;
+        top: 22px;
+        left: 8px;
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-white);
+
+        transition-duration: var(--transition-duration);
+
+        @include f.mobile{
+            height: 1.6px;
+        }
+    }
+
+    &::before{
+        rotate: 45deg;
+    }
+
+    &::after{
+        rotate: -45deg;
+    }
+
+    @include f.hover{
+        &::after, &::before{
+            background-color: var(--color-blue-logo);
+        }
+    }
+}

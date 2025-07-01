@@ -1,0 +1,103 @@
+@use "../../all" as f;
+
+.icon {
+    min-width: 190px;
+    width: 210px;
+    position: relative;
+
+    --size-circle: 100px;
+    --size-svg: calc(var(--size-circle) * 0.55);
+
+    @include f.tablet {
+      --size-circle: 85px;
+    }
+
+    @include f.mobile {
+      width: 100%;
+      --size-circle: 70px;
+    }
+
+    // .icon__body
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+
+      @include f.mobile {
+        row-gap: 10px;
+      }
+
+      // .icon__body-circle
+      &-circle {
+        @include f.flex-center(true);
+        @include f.square(var(--size-circle));
+        border-radius: 50%;
+        background: var(--color-accent);
+        border: 5px solid var(--color-accent-secondary);
+  
+        svg {
+          @include f.square(var(--size-svg));
+          color: var(--color-white);
+        }
+      }
+      // .icon__body-text
+      &-text {
+        text-align: center;
+        padding-inline: 10px;
+      }
+    }
+    // .icon__decor
+    &__decor {
+      position: absolute;
+      z-index: 2;
+      top: calc(var(--size-circle) / 2); //50px;
+      transform: translateY(-50%);
+      right: -15px;
+      transform: translateX(50%); //13% = 15px
+
+      width: 52%; //110px
+
+      @include f.mobile {
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        transform: translateY(100%);
+      }
+
+      // .icon__decor-list
+      &-list {
+        display: flex;
+        justify-content: space-between;
+  
+        @include f.mobile {
+          flex-direction: column;
+          height: 20px;
+        }
+      }
+      // .icon__decor-item
+      &-item {
+        @include f.square(6px);
+        border-radius: 50%;
+        background: var(--color-mark-process);
+  
+        @include f.mobile {
+          &:nth-child(odd) {
+            display: none;
+          }
+        }
+      }
+    }
+}
+
+
+@keyframes colorChange {
+    50% {
+      @include f.square(18px);
+      background: var(--color-accent);
+    }
+    100% {
+      @include f.square(6px);
+      background: var(--color-mark-process);
+    }
+}

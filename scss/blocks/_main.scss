@@ -1,0 +1,97 @@
+@use '../all' as f;
+
+.main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    // background: red;
+
+    // .main__container
+    &__container {
+        width: min(100%, 780px);
+        // background: green;
+    }
+    // .main__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 80px;
+
+        @include f.tablet{
+            row-gap: 60px;
+        }
+
+        @include f.mobile{
+            row-gap: 40px;
+            // background: red;
+        }
+    }
+    // .main__title
+    &__title {
+        text-transform: uppercase;
+        color: var(--color-black);
+
+        // .main__title_accent
+        &_accent{
+            color: var(--color-accent);
+        }
+
+    }
+    // .main__decription
+    &__decription {
+        font-size: f.rem(20);
+        color: var(--color-black);
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        @include f.tablet{
+            font-size: f.rem(18);
+        }
+
+        @include f.mobile{
+            font-size: f.rem(16);
+        }
+    }
+    // .main__description-title
+    &__description-title {
+        font-weight: 700;
+    }
+    // .main__desription-list
+    &__desription-list {
+    }
+    // .main__description-item
+    &__description-item {
+        padding-left: 25px;
+        position: relative;
+
+        &:not(:last-child){
+            padding-bottom: 5px;
+        }
+
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '-';
+            color: currentColor;
+            padding-inline: 10px;
+        }
+    }
+    // .main__buttons
+    &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        @include f.tablet{
+            gap: 20px;
+        }
+    }
+    // .main__button
+    &__button {
+        @include f.mobile{
+            min-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+
+@use '../../all' as f;
+
+.burger-button{
+    @include f.reset-button;
+
+    @include f.square(var(--min-height-click-elems));
+
+    vertical-align: top;
+    position: relative;
+
+    &::after{
+        @include f.abs-center;
+
+        content: '';
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-white);
+        box-shadow: 0 -10px var(--color-white),
+                    0 10px var(--color-white);
+
+        transition-duration: var(--transition-duration);
+
+        @include f.mobile{
+            height: 1.6px;
+        }
+    }
+
+
+    @include f.hover{
+        &::after{
+            background-color: var(--color-blue-logo);
+            box-shadow: 0 -10px var(--color-blue-logo),
+                        0 10px var(--color-blue-logo);
+        }
+    }
+}
